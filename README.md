@@ -1,53 +1,62 @@
-# Reproductor de Video ASCII 🎬💻
-ASCII Terminal Player es un proyecto de procesamiento de video en tiempo real desarrollado como parte de mi portafolio profesional en Ingeniería de Sistemas e Informática. La aplicación transforma los fotogramas de un video en representaciones artísticas mediante caracteres ASCII, utilizando manipulación directa de datos de imagen en el navegador.
+# ASCII Terminal Player 🎬💻
 
-🚀 Características Principales
+**ASCII Terminal Player** es un sistema de procesamiento de video en tiempo real desarrollado como parte de mi portafolio profesional en **Ingeniería de Sistemas e Informática**. La aplicación transforma flujos de video dinámicos en representaciones artísticas mediante caracteres ASCII, utilizando manipulación directa de matrices de datos de imagen a través de la **Canvas API**.
 
-Renderizado en Tiempo Real: Algoritmo optimizado para escanear píxeles y convertirlos en símbolos según su valor de luminancia.
+## 📸 Vista Previa del Sistema
 
-Interfaz de Terminal: Control total mediante una consola integrada que acepta comandos como play, pause y stop.
+Aquí puedes observar la interfaz principal y el flujo del juego:
 
-Biblioteca Dinámica: Acceso rápido a videos locales mediante una interfaz lateral organizada.
+<p align="center">
+  <img src="assets/images/screenshot_principal.jpeg" width="700" alt="Captura de Pantalla GameLove">
+  <br>
+  <i>Interfaz.</i>
+</p>
 
-Carga de Archivos Locales: Soporte para que el usuario suba y visualice sus propios videos en formato ASCII.
+<p align="center">
+  <img src="assets/images/screenshot_principal2.jpeg" width="700" alt="Captura de Pantalla GameLove">
+  <br>
+  <i>Interfaz con la reproducción de Roronoa.</i>
+</p>
 
-Estado "No Signal": Implementación de estática visual (ruido aleatorio) cuando el sistema está en espera, mejorando la experiencia de usuario (UX).
 
-🛠️ Tecnologías Utilizadas
-Lenguaje: JavaScript (Vanilla JS).
+## 🚀 Características Principales
 
-Frontend: HTML5 (Canvas API) y CSS3 (Grid & Flexbox).
+* **Renderizado de Alta Frecuencia:** Algoritmo optimizado para el escaneo de píxeles y conversión a símbolos basada en la luminancia percibida.
+* **Interfaz Estilo Terminal:** Consola interactiva integrada que procesa comandos lógicos (`play`, `pause`, `stop`).
+* **Biblioteca Dinámica:** Panel lateral organizado para el acceso rápido y gestión de contenido multimedia local.
+* **Carga de Archivos Locales:** Capacidad de procesamiento para archivos externos subidos por el usuario.
+* **Simulación de "No Signal":** Implementación de ruido aleatorio (estática visual) para mejorar la **Experiencia de Usuario (UX)** durante estados de espera.
 
-Fuentes: Google Fonts (Nunito / Courier New).
+## 🛠️ Tecnologías y Herramientas
 
-Iconos: Material Icons.
+* **Core:** JavaScript (Vanilla JS) para la lógica de procesamiento.
+* **Gráficos:** HTML5 Canvas API (Manipulación de `ImageData`).
+* **Maquetación:** CSS3 (Sistemas de Layout mediante Grid y Flexbox).
+* **Tipografía:** Google Fonts (**Courier New** para la cuadrícula ASCII y **Nunito** para la UI).
+* **Recursos:** Material Icons para una navegación intuitiva.
 
-⚙️ Lógica Técnica
-El proyecto se basa en la clase AsciiEffect, la cual ejecuta los siguientes pasos técnicos:
+## ⚙️ Arquitectura y Lógica Técnica
 
-Captura: Extrae los datos de color de cada frame del elemento <video> mediante getImageData.
+El núcleo del sistema reside en la clase `AsciiEffect`, la cual implementa un pipeline de procesamiento de señales visuales:
 
-Procesamiento: Analiza el promedio de color (RGB) para determinar el brillo de cada celda.
+1.  **Captura de Datos:** Extracción de matrices de color (`RGBA`) de cada frame del elemento `<video>` mediante el método `getImageData`.
+2.  **Procesamiento de Luminancia:** Cálculo del promedio de color (RGB) para determinar la intensidad lumínica de cada celda de la cuadrícula.
+3.  **Algoritmo de Mapeo:** Traducción del valor de brillo a una densidad de caracteres específica (ej. `@`, `#`, `*`, `.`).
+4.  **Renderizado en Buffer:** Dibujo de los caracteres resultantes en un canvas secundario de alta frecuencia para mantener la fluidez visual.
 
-Mapeo: Asigna un carácter específico (ej. @, #, *, .) basándose en la intensidad de la luz capturada.
 
-Renderizado: Dibuja los caracteres resultantes en un canvas de alta frecuencia.
 
-📂 Estructura del Proyecto
+## 📂 Estructura del Repositorio
 
+Siguiendo estándares de organización de software:
+
+```text
 /ReproductorAsciiVideo
 ├── /Assets
-│   ├── /Videos        # Contenido multimedia local
-│   ├── /miniaturas    # Previsualizaciones de la biblioteca
-│   └── /images        # Recursos visuales e interfaz
-├── index.html         # Estructura principal (2 columnas)
-├── style.css          # Estética de terminal minimalista
-├── index.js           # Lógica de procesamiento y comandos
-└── README.md          # Documentación del proyecto
-
-📝 Instalación y Uso
-Clona el repositorio: git clone https://github.com/Eisritome10/ReproductorAsciiVideo.git
-
-Abre el archivo index.html en tu navegador preferido.
-
-¡Disfruta de la experiencia retro!
+│   ├── /Videos         # Contenido multimedia local
+│   ├── /miniaturas     # Previsualizaciones de la biblioteca
+│   └── /images         # Recursos visuales e interfaz
+├── index.html          # Estructura principal y contenedores
+├── style.css           # Estética de terminal retro-minimalista
+├── index.js            # Lógica de procesamiento de video y comandos
+└── README.md           # Documentación técnica
