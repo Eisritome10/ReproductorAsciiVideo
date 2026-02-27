@@ -98,21 +98,10 @@ body {
 
 .canvasBoard { width: 100%; height: 100%; object-fit: contain; }
 
-.pixel-button {
-    background: #13bd98;
-    color: #000;
-    padding: 12px;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.input-url { display: none; 
-    }
+.input-url { display: none; }
 
 .pixel-button2 {
-    background: #37d46e; /* Cambia este valor por el que elijas */
+    background: #37d46e;
     color: #000;
     padding: 12px;
     display: flex;
@@ -124,6 +113,5 @@ body {
 }
 
 .pixel-button2:hover {
-    background: #37d46e; /* Un tono más oscuro para el hover */
     filter: brightness(1.2);
 }

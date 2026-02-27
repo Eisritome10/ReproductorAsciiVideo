@@ -62,7 +62,6 @@ class AsciiEffect {
     }
 }
 
-// EFECTO NO SIGNAL (Estática)
 const drawNoSignal = () => {
     if (!isPlaying) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -101,6 +100,7 @@ function videoLoaded() {
     const file = document.querySelector("#fileChooser").files[0];
     if (file) {
         isPlaying = true;
+        cancelAnimationFrame(animationId);
         video.src = URL.createObjectURL(file);
         video.load();
         video.oncanplay = () => {
@@ -117,8 +117,9 @@ drawNoSignal();
 
 reproductorItems.forEach(item => {
     item.addEventListener('click', () => {
-        isPlaying = true;
         const name = item.getAttribute('data-video');
+        isPlaying = true;
+        cancelAnimationFrame(animationId);
         video.src = `${basePath}${name}.mp4`;
         video.play();
     });
@@ -139,9 +140,11 @@ commandsInput.addEventListener("keyup", (e) => {
         if (cmd === "play") {
             if (arg && moviesList.includes(arg)) {
                 isPlaying = true;
+                cancelAnimationFrame(animationId);
                 video.src = `${basePath}${arg}.mp4`;
                 video.play();
-            } else {
+            } else if (video.src) {
+                isPlaying = true;
                 video.play();
             }
         } else if (cmd === "pause") {
