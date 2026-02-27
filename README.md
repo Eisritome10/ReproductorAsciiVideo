@@ -7,13 +7,13 @@
 Aquí puedes observar la interfaz principal y el flujo del juego:
 
 <p align="center">
-  <img src="assets/images/screenshot_principal.jpeg" width="700" alt="Captura de Pantalla GameLove">
+  <img src="Assets/images/screenshot_principal.jpeg" width="700" alt="Captura de Pantalla ReproductorDeVideoEnASCII">
   <br>
   <i>Interfaz.</i>
 </p>
 
 <p align="center">
-  <img src="assets/images/screenshot_principal2.jpeg" width="700" alt="Captura de Pantalla GameLove">
+  <img src="Assets/images/screenshot_principal2.jpeg" width="700" alt="Captura de Pantalla ReproductorDeVideoEnASCII">
   <br>
   <i>Interfaz con la reproducción de Roronoa.</i>
 </p>
