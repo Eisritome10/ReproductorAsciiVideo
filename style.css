@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 0 !important;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background: #080808;
+    color: #e0e0e0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    height: 100%;
+}
+
+.sidebar {
+    background: #0d0d0d;
+    border-right: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.block-header {
+    background: #13bd98;
+    color: #000;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.reproductor--item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #1a1a1a;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.reproductor--item:hover { background: #1a1a1a; border-color: #13bd98; }
+
+.item--min { width: 40px; height: 40px; object-fit: cover; margin-right: 15px; }
+
+.console { display: flex; flex-direction: column; height: 100%; }
+
+.console--top {
+    background: #1a1a1a;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.console--controls { display: flex; align-items: center; }
+
+.close-btn { 
+    color: #ff4444; 
+    font-weight: bold; 
+    cursor: pointer; 
+    padding: 2px 10px;
+    transition: 0.3s;
+}
+
+.close-btn:hover { background: #ff4444; color: #fff; }
+
+.console--input {
+    padding: 12px;
+    display: flex;
+    background: #000;
+    border-bottom: 1px solid #1a1a1a;
+    color: #00FF41;
+}
+
+.console--input input {
+    background: transparent;
+    border: none;
+    color: #00FF41;
+    width: 100%;
+    margin-left: 10px;
+    outline: none;
+}
+
+.canvas-container {
+    flex-grow: 1;
+    display: flex;
+    background: #000;
+    overflow: hidden;
+}
+
+.canvasBoard { width: 100%; height: 100%; object-fit: contain; }
+
+.pixel-button {
+    background: #13bd98;
+    color: #000;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.input-url { display: none; 
+    }
+
+.pixel-button2 {
+    background: #37d46e; /* Cambia este valor por el que elijas */
+    color: #000;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.pixel-button2:hover {
+    background: #37d46e; /* Un tono más oscuro para el hover */
+    filter: brightness(1.2);
+}

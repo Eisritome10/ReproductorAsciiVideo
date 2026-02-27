@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Terminal Player - Emanuel</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="block-header">SISTEMA / COMANDOS</div>
+            <div class="command--card">
+                <br>
+                <div class="card--title">PLAY / PAUSE / STOP</div>
+                <br>
+                <p>Escribe comandos como "play akira" o usa la lista inferior.</p>
+            </div>
+            
+            <div class="block-header">BIBLIOTECA</div>
+            <div class="reproductor--list">
+                <div class="reproductor--item" data-video="akira">
+                    <img src="./Assets/miniaturas/akira.jpg" class="item--min">
+                    <span class="item--title">Akira</span>
+                </div>
+                <div class="reproductor--item" data-video="kaguya">
+                    <img src="./Assets/miniaturas/Chika.jpg" class="item--min">
+                    <span class="item--title">Kaguya</span>
+                </div>
+                <div class="reproductor--item" data-video="roronoa">
+                    <img src="./Assets/miniaturas/Zoro.jpg" class="item--min">
+                    <span class="item--title">Roronoa</span>
+                </div>
+                <div class="reproductor--item" data-video="mirai">
+                    <img src="./Assets/miniaturas/mirai.jpg" class="item--min">
+                    <span class="item--title">Mirai</span>
+                </div>
+                <div class="reproductor--item" data-video="shingeki">
+                    <img src="./Assets/miniaturas/levi.jpg" class="item--min">
+                    <span class="item--title">Shingeki</span>
+                </div>
+                <div class="reproductor--item" data-video="dxd">
+                    <img src="./Assets/miniaturas/dxd.jpg" class="item--min">
+                    <span class="item--title">dxd</span>
+                </div>
+            </div>
+
+            <div class="upload-area">
+                <div class="block-header">NUEVO VIDEO</div>
+                <br>
+                <input type="file" id="fileChooser" class="input-url" onchange="videoLoaded()">
+                <label for="fileChooser" class="pixel-button2">
+                    <i class="material-icons">upload</i> AÑADIR VIDEO
+                </label>
+            </div>
+        </aside>
+
+        <main class="main-display">
+            <div class="console">
+                <div class="console--top">
+                    <div class="console--pwd">C:/ASCII/OUTPUT</div>
+                    <div class="console--controls">
+                        <div class="controls close-btn" onclick="stopVideo()">X</div>
+                    </div>
+                </div>
+                <div class="console--input">
+                    <span>$</span>
+                    <input type="text" id="commands" placeholder="Escribe un comando..." autofocus>
+                </div>
+                <div class="canvas-container">
+                    <canvas class="canvasBoard"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <video class="videoPlayer" muted style="display:none;"></video>
+
+    <script src="./index.js"></script>
+</body>
+</html>
